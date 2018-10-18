@@ -11,21 +11,26 @@ namespace CapaLogica
     public class Logica
     {
 
-        public Usuario login(string usuario, string contrasena)
+        public bool login(string usuario, string contrasena)
         {
             Datos capaDatos = new Datos();
             Usuario usuarioObt = capaDatos.obtenerObjUsuario(usuario, contrasena);
+            string startupPath = Environment.CurrentDirectory;
+             
 
             if (usuarioObt != null)
             {
-                string startupPath = Environment.CurrentDirectory;
 
-                string[] lines = { usuarioObt.nickName, usuarioObt.codigoUsuario.ToString()};
+                string[]  lines = { usuarioObt.nickName, usuarioObt.codigoUsuario.ToString()};
 
                 // WriteAllLines creates a file, writes a collection of strings to the file,
                 // and then closes the file.  You do NOT need to call Flush() or Close().
                 System.IO.File.WriteAllLines(startupPath + "/user.dll", lines);
-                return usuarioObt;
+                return true;
+            }
+            else {
+                string[] lines = { };
+                System.IO.File.WriteAllLines(startupPath + "/user.dll", lines);
             }
 
             //if (inicioSesion)
@@ -34,7 +39,7 @@ namespace CapaLogica
             //    Usuario.permisosUsuario = lista;              
             //}
 
-            return null;
+            return false;
 
         }
 
@@ -51,6 +56,28 @@ namespace CapaLogica
             string[] lines = System.IO.File.ReadAllLines(startupPath + "/user.dll");
 
             return lines[1];
+        }
+
+        public Permiso obtenerPermisos(int usuarioCodigo, int app_codigo)
+        {
+            Datos capaDatos = new Datos();
+            List<Permiso> permisos = capaDatos.obtenerPermisos(usuarioCodigo);
+
+            foreach(Permiso permiso in permisos)
+            {
+                if (permiso.aplicacion == app_codigo)
+                {
+                    return permiso;
+                }
+            }
+            return null;
+        }
+
+        public List<Permiso> obtenerPermisosList(int usuarioCodigo, int app_codigo)
+        {
+            Datos capaDatos = new Datos();
+            return capaDatos.obtenerPermisos(usuarioCodigo);
+
         }
 
     }

@@ -112,6 +112,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 269);
+            this.ControlBox = false;
             this.Controls.Add(this.Btn_Aceptar);
             this.Controls.Add(this.Btn_loginAyuda);
             this.Controls.Add(this.Lbl_loginPass);
@@ -119,7 +120,8 @@
             this.Controls.Add(this.Txt_loginPass);
             this.Controls.Add(this.Txt_loginUser);
             this.Name = "InicioSesionForm";
-            this.Text = "InicioSesionForm";
+            this.Text = "Inicio de Sesion";
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.InicioSesionForm_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 

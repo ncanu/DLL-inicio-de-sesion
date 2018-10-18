@@ -15,8 +15,7 @@ namespace InicioSesion
     {
         public InicioSesionForm()
         {
-            InitializeComponent();
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            InitializeComponent();            
         }
 
         private void Btn_Aceptar_Click(object sender, EventArgs e)
@@ -31,7 +30,7 @@ namespace InicioSesion
             }
 
 
-            if (capaLogica.login(username, password)!=null)
+            if (capaLogica.login(username, password))
             {
                 this.Close();
             }
@@ -39,6 +38,12 @@ namespace InicioSesion
             {
                 MessageBox.Show("Usuario o contraseña incorrecta");
             }
+        }
+
+        private void InicioSesionForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            string startupPath = Environment.CurrentDirectory;
+            Help.ShowHelp(this, startupPath+ "/ayuda_inicio_sesion/Ayuda_seguridad.chm", "ayuda.html#ayuda");
         }
     }
 }

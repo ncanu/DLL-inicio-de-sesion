@@ -50,13 +50,13 @@ namespace CapaDatos
 
                             listaPermisos.Add(permiso);
                             //respuesta = new List<Permiso>();
-                            //respuesta = listaPermisos;
+                           
 
 
                         }
 
                         conn.Close();
-
+                        respuesta = listaPermisos;
                     }
 
                 }
