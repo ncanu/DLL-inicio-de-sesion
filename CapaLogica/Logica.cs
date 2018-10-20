@@ -16,22 +16,22 @@ namespace CapaLogica
             Datos capaDatos = new Datos();
             Usuario usuarioObt = capaDatos.obtenerObjUsuario(usuario, contrasena);
             string startupPath = Environment.CurrentDirectory;
-             
+            string x = "";
+            string[] lines = { x,x,x };
+            System.IO.File.WriteAllLines(startupPath + "/user.dll", lines);
+
 
             if (usuarioObt != null)
             {
 
-                string[]  lines = { usuarioObt.nickName, usuarioObt.codigoUsuario.ToString()};
+                string[]  linesFound = { usuarioObt.nickName, usuarioObt.codigoUsuario.ToString()};
 
                 // WriteAllLines creates a file, writes a collection of strings to the file,
                 // and then closes the file.  You do NOT need to call Flush() or Close().
-                System.IO.File.WriteAllLines(startupPath + "/user.dll", lines);
+                System.IO.File.WriteAllLines(startupPath + "/user.dll", linesFound );
                 return true;
             }
-            else {
-                string[] lines = { };
-                System.IO.File.WriteAllLines(startupPath + "/user.dll", lines);
-            }
+
 
             //if (inicioSesion)
             //{

@@ -95,6 +95,10 @@ namespace CapaDatos
                         cmd.ExecuteNonQuery();
 
                         reader = cmd.ExecuteReader();
+                        if (!reader.HasRows)
+                        {
+                            return null;
+                        }
                         while (reader.Read())
                         {
                             
@@ -108,6 +112,11 @@ namespace CapaDatos
 
                 }
 
+                if (user.nickName == "" && user.codigoUsuario == 0)
+                {
+                    return null;
+                }
+
                 return user;
 
             }
@@ -116,6 +125,7 @@ namespace CapaDatos
                 return null;
             }
 
+            return null;
         }
 
 

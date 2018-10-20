@@ -33,6 +33,7 @@ namespace InicioSesion
             if (capaLogica.login(username, password))
             {
                 this.Close();
+                //MessageBox.Show("Usuario o contraseña correcta");
             }
             else
             {
@@ -44,6 +45,12 @@ namespace InicioSesion
         {
             string startupPath = Environment.CurrentDirectory;
             Help.ShowHelp(this, startupPath+ "/ayuda_inicio_sesion/Ayuda_seguridad.chm", "ayuda.html#ayuda");
+        }
+
+        private void Btn_loginAyuda_Click(object sender, EventArgs e)
+        {
+            string startupPath = Environment.CurrentDirectory;
+            Help.ShowHelp(this, startupPath + "/ayuda_inicio_sesion/Ayuda_seguridad.chm", "ayuda.html#ayuda");
         }
     }
 }

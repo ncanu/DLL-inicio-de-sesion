@@ -43,11 +43,11 @@
             this.Btn_Aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Aceptar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Aceptar.Image")));
             this.Btn_Aceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Aceptar.Location = new System.Drawing.Point(518, 187);
+            this.Btn_Aceptar.Location = new System.Drawing.Point(509, 187);
             this.Btn_Aceptar.Name = "Btn_Aceptar";
-            this.Btn_Aceptar.Size = new System.Drawing.Size(92, 44);
+            this.Btn_Aceptar.Size = new System.Drawing.Size(101, 44);
             this.Btn_Aceptar.TabIndex = 55;
-            this.Btn_Aceptar.Text = "LOGIN";
+            this.Btn_Aceptar.Text = "Aceptar";
             this.Btn_Aceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_Aceptar.UseVisualStyleBackColor = false;
             this.Btn_Aceptar.Click += new System.EventHandler(this.Btn_Aceptar_Click);
@@ -67,6 +67,7 @@
             this.Btn_loginAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_loginAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btn_loginAyuda.UseVisualStyleBackColor = false;
+            this.Btn_loginAyuda.Click += new System.EventHandler(this.Btn_loginAyuda_Click);
             // 
             // Lbl_loginPass
             // 

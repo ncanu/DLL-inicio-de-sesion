@@ -32,7 +32,7 @@
   <ItemGroup>
     <Reference Include="CapaDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CapaLogica\bin\Debug\CapaDatos.dll</HintPath>
+      <HintPath>..\CapaDatos\bin\Debug\CapaDatos.dll</HintPath>
     </Reference>
     <Reference Include="CapaLogica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
